@@ -10,18 +10,18 @@ services:
       - ./node-b:/home/cubrid/CUBRID
     ports:
       - "33001:33000" # broker
-      - "8001:8001" # manager (있다면)
+      - "8002:8001" # manager (있다면)
 
   cubrid-node-b:
     build: .
-    container_name: cubrid-node-a
+    container_name: cubrid-node-b
     hostname: nodeb
     networks: [cubrid-ha]
     volumes:
       - ./node-b:/home/cubrid/CUBRID
     ports:
       - "33002:33000"
-      - "8002:8001"
+      - "8003:8001"
 
 networks:
   cubrid-ha:
