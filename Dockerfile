@@ -1,7 +1,7 @@
 FROM quay.io/rockylinux/rockylinux:9.7.20251123-ubi
 
 # 필요한 패키지 설치
-RUN dnf -y install wget ca-certificates && dnf clean all
+RUN dnf -y install wget ca-certificates vim sudo && dnf clean all
 
 # cubrid 사용자 생성
 RUN useradd -m cubrid
