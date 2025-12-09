@@ -7,7 +7,7 @@ services:
     hostname: nodea
     networks: [cubrid-ha]
     volumes:
-      - ./node-b:/home/cubrid/CUBRID
+      - ./node-a:/home/cubrid/CUBRID
       - ./.cubrid.sh:/home/cubrid/.cubrid.sh
     ports:
       - "33001:33000" # broker
