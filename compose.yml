@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  cubrid-node-a:
+    build: .
+    container_name: cubrid-node-a
+    hostname: nodea
+    networks: [cubrid-ha]
+    volumes:
+      - ./node-b:/home/cubrid/CUBRID
+    ports:
+      - "33001:33000" # broker
+      - "8001:8001" # manager (있다면)
+
+  cubrid-node-b:
+    build: .
+    container_name: cubrid-node-a
+    hostname: nodeb
+    networks: [cubrid-ha]
+    volumes:
+      - ./node-b:/home/cubrid/CUBRID
+    ports:
+      - "33002:33000"
+      - "8002:8001"
+
+networks:
+  cubrid-ha:
+    driver: bridge
