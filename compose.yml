@@ -5,7 +5,12 @@ services:
     build: .
     container_name: cubrid-node-a
     hostname: nodea
-    networks: [cubrid-ha]
+    networks:
+      cubrid-ha:
+        ipv4_address: 172.28.0.10
+    extra_hosts:
+      - "nodea:172.28.0.10"
+      - "nodeb:172.28.0.11"
     volumes:
       - ./node-a:/home/cubrid/CUBRID
       - ./.cubrid.sh:/home/cubrid/.cubrid.sh
@@ -17,7 +22,12 @@ services:
     build: .
     container_name: cubrid-node-b
     hostname: nodeb
-    networks: [cubrid-ha]
+    networks:
+      cubrid-ha:
+        ipv4_address: 172.28.0.11
+    extra_hosts:
+      - "nodea:172.28.0.10"
+      - "nodeb:172.28.0.11"
     volumes:
       - ./node-b:/home/cubrid/CUBRID
       - ./.cubrid.sh:/home/cubrid/.cubrid.sh
@@ -28,3 +38,6 @@ services:
 networks:
   cubrid-ha:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
