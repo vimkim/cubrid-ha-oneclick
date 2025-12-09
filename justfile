@@ -6,4 +6,11 @@ hardlink-cubrid-conf:
     ln -f ./databases.txt node-a/databases/databases.txt
     ln -f ./databases.txt node-b/databases/databases.txt
 
+compose-up:
+    sudo podman-compose up --build
+
+oneclick:
+    just hardlink-cubrid-conf
+    just compose-up
+
 
