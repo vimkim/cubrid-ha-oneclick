@@ -4,7 +4,13 @@ FROM quay.io/rockylinux/rockylinux:9.7.20251123-ubi
 RUN dnf -y install wget ca-certificates vim sudo && dnf clean all
 
 # cubrid 사용자 생성
-RUN useradd -m cubrid
+RUN useradd -m cubrid && echo "cubrid:cubrid" | chpasswd
+
+# Add to sudo group
+RUN usermod -aG sudo cubrid
+
+# OPTIONAL: Passwordless sudo
+RUN echo "cubrid ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 WORKDIR /home/cubrid
 
