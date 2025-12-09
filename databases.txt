@@ -1,0 +1,2 @@
+#db-name vol-path db-host log-path lob-base-path
+testdb /home/cubrid/CUBRID/databases/testdb nodea:nodeb /home/cubrid/CUBRID/databases/testdb/log file:/home/cubrid/CUBRID/databases/testdb/lob
