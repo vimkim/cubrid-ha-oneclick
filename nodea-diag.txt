@@ -1,0 +1,33 @@
+CLASS_OID:     0|       197|   11 (dba.inner_t)
+CLASS_OID =  0| 197|11, OVF_VFID =   -1|  -1, NEXT_VPID =   -1|  -1
+unfill_space = 1634
+Estimated: num_pages = 1, num_recs = 2,  avg reclength = 48
+Estimated: num high best = 1, num others(not in array) high best = 0
+Hint of best set of vpids with head = 1
+   0|4481 15888,  -1|  -1    0,  -1|  -1    0,  -1|  -1    0,  -1|  -1    0,
+  -1|  -1    0,  -1|  -1    0,  -1|  -1    0,  -1|  -1    0,  -1|  -1    0,
+Second best: num hints = 0, head of hints = 0, tail (next to insert) of hints = 0, num subs = 0
+  -1|  -1,  -1|  -1,  -1|  -1,  -1|  -1,  -1|  -1,
+  -1|  -1,  -1|  -1,  -1|  -1,  -1|  -1,  -1|  -1,
+Last vpid =    0|4481
+Next full search vpid =    0|4481
+
+*** Dumping pageid = 4481 of volume = /home/cubrid/CUBRID/databases/testdb/testdb ***
+NUM SLOTS = 7, NUM RECS = 3, TYPE OF SLOTS = ANCHORED_DONT_REUSE_SLOTS,
+ALIGNMENT-TO = INT
+TOTAL FREE AREA = 15908, CONTIGUOUS FREE AREA = 15812, FREE SPACE OFFSET = 504, NEED UPDATE BEST HINT = 0
+IS_SAVING = 1
+
+Slot-id =  0, offset =   32, type = HOME, length =  296, waste = 0
+
+Slot-id =  1, offset =    0, type = MARKDELETED
+
+Slot-id =  2, offset =    0, type = MARKDELETED
+
+Slot-id =  3, offset =    0, type = MARKDELETED
+
+Slot-id =  4, offset =    0, type = MARKDELETED
+
+Slot-id =  5, offset =  416, type = HOME, length =   36, waste = 0
+
+Slot-id =  6, offset =  460, type = HOME, length =   44, waste = 0
