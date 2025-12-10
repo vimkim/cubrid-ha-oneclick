@@ -15,8 +15,8 @@ services:
       - ./node-a:/home/cubrid/CUBRID
       - ./.cubrid.sh:/home/cubrid/.cubrid.sh
     ports:
-      - "33001:33000" # broker
-      - "8002:8001" # manager (있다면)
+      - "33101:33000" # broker
+      - "8102:8001" # manager (있다면)
 
   cubrid-node-b:
     build: .
@@ -32,8 +32,8 @@ services:
       - ./node-b:/home/cubrid/CUBRID
       - ./.cubrid.sh:/home/cubrid/.cubrid.sh
     ports:
-      - "33002:33000"
-      - "8003:8001"
+      - "33102:33000"
+      - "8103:8001"
 
 networks:
   cubrid-ha:
