@@ -7,6 +7,9 @@ hardlink-cubrid-conf:
     ln -f ./databases.txt node-b/databases/databases.txt
 
 compose-up:
+    sudo podman-compose up
+
+compose-up-build:
     sudo podman-compose up --build
 
 oneclick:
